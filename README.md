@@ -1,4 +1,6 @@
-https://demo-case-snowy.vercel.app/
+This project aims to clone the UI of OKX's Home page using Next.js.
+
+https://demo-case-wmdv.vercel.app/
 
 <<<<<<< HEAD
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
