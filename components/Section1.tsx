@@ -1,16 +1,35 @@
+/** @format */
+
+import Navbar from "@/components/Navbar";
 import Image from "next/image";
+import Balancer from "react-wrap-balancer";
 import Button from "./Button";
 
-function Section1() {
-  return (
-    <section className="flexCenter w-full flex-col pb-[100px] py-20 px-10">
-      <div className="get-app">
-        <div className="z-20 flex w-full flex-1 flex-col items-start justify-center gap-12">
-          <h1 className="bold-52 lg:bold-83 xl:max-w-[520px]">
-            Ortalama Kripto Borsalarından Daha Hızlı, Daha İyi, Daha Güçlü
-          </h1>
+// images
+import databiz from "@/assets/images/client-databiz.svg";
+import audiophile from "@/assets/images/client-audiophile.svg";
+import meet from "@/assets/images/client-meet.svg";
+import maker from "@/assets/images/client-maker.svg";
 
-          <p className="regular-16 text-gray-10"></p>
+import hremoImagedesktop from "@/assets/images/image-hero-desktop.png";
+import hremoImageMobile from "@/assets/images/image-hero-mobile.png";
+
+export default function Home() {
+  const bannerImages = [databiz, meet, maker];
+
+  return (
+    <div className="max-container min-h-screen w-full">
+      <Navbar />
+      {/* hero */}
+      <section className="mx-auto flex max-w-6xl  flex-col gap-2 px-8 py-10 pb-12 transition-all md:flex-row md:gap-4 ">
+        {/* left div */}
+        <div className=" flex flex-col items-center  gap-6 pt-6 text-center md:w-1/2 md:items-start md:gap-10 md:pt-32 md:text-left">
+          <Balancer>
+            <h1 className="text-3xl font-semibold md:text-6xl">
+              Ortalama Kripto Borsalarından Daha Hızlı, Daha İyi, Daha Güçlü
+            </h1>
+          </Balancer >
+
           <div className="flex w-full flex-col gap-6 whitespace-nowrap xl:flex-row">
             <input
               type="text"
@@ -31,29 +50,33 @@ function Section1() {
             />
           </div>
 
-          <div className="flex w-full flex-col gap-20 whitespace-nowrap xl:flex-row 12 sm:flex-ro">
-            <Image src="/svg1.svg" alt="svg1" width={120} height={100} />
-            <Image src="/svg2.svg" alt="svg1" width={200} height={100} />
-            <Image src="/svg3.svg" alt="svg1" width={66} height={100} />
+          <div className="flex gap-4 md:gap-6 mb-20">
+            {bannerImages.map((img, i) => (
+              <Image
+                className=" h-12 w-auto"
+                key={i}
+                src={img}
+                alt="client-image"
+              />
+            ))}
           </div>
         </div>
 
-        <div className="flex flex-1 items-center justify-end">
+        {/* right div */}
+        <section className="md:w-1/2 ">
           <video
-            className=""
+            className="hidden h-auto max-w-[500px]  md:block"
             style={{
               boxSizing: "border-box",
-              marginLeft: "400px",
-              marginRight: "150px",
-              paddingLeft: "37px",
-              paddingRight: "57px",
+              marginLeft: "200px",
+              marginTop: "50px",
             }}
             autoPlay
             loop
             muted
             playsInline
-            width={350}
-            height={580}
+            width={280}
+            height={480}
             poster="https://www.okx.com/cdn/assets/imgs/241/7952167B03F2361A.png?x-oss-process=image/format,webp"
           >
             <source
@@ -66,10 +89,32 @@ function Section1() {
             />
             <track kind="captions" />
           </video>
-        </div>
-      </div>
-    </section>
+          <video
+            className="h-auto md:hidden mx-auto text-center"
+            style={{
+              boxSizing: "border-box",
+            }}
+            autoPlay
+            loop
+            muted
+            playsInline
+            width={200}
+            height={180}
+            poster="https://www.okx.com/cdn/assets/imgs/241/7952167B03F2361A.png?x-oss-process=image/format,webp"
+          >
+            <source
+              src="https://www.okx.com/cdn/assets/files/241/32192407FC118924.webm"
+              type="video/webm"
+            />
+            <source
+              src="https://www.okx.com/cdn/assets/files/241/75CA241D6B3464F7.mp4"
+              type="video/mp4"
+            />
+            <track kind="captions" />
+          </video>
+        </section>
+        
+      </section>
+    </div>
   );
 }
-
-export default Section1;

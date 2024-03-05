@@ -2,7 +2,7 @@ import React from "react";
 
 function Section2() {
   return (
-    <section className="max-container padding-container flex flex-col items-center justify-center gap-20 py-10 pb-32 md: gap-28 lg: py-10 xl: flex-row">
+    <section className="max-container padding-container flex flex-col items-center justify-center mb-32 mt-15">
       <div className="w-full xl:w-1/2" style={{ marginTop: "50px" }}>
         <h3 className="bold-40 lg:bold-83 text-center mb-0">
           Profesyonel İşlemler Yapın

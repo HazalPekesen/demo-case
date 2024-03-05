@@ -27,10 +27,11 @@ const Footer = () => {
               </ul>
             </FooterColumnn>
           ))}
-          <div className="flex flex-col gap-5">
-            <h4 className="bold-18 whitespace-nowrap">
+          <div style={{ marginTop: "50px" }}>
+            <h4 className="bold-18 whitespace-nowrap mx-auto text-center">
               OKX Uygulaması ile Dilediğiniz Zaman İşlem Yapabilirsiniz
             </h4>
+            <Image src="/qr.png" alt="logo" width={100} height={100} />
           </div>
         </div>
         <div className="flex flex-col gap-5">
